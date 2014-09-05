@@ -1,0 +1,26 @@
+Problem 4 – SoftUni Students
+Write a PHP script that takes as input a list of SoftUni students with their exam results, sorts them by certain criteria and displays the result as HTML table. The students come as comma separated list, holding username, email, type and result. Username is text, email is email address, type is "onsite" or "online" and result is an integer number. Each line in the input holds a student. Students automatically get a column named "Id" which holds the line number (1, 2, 3, etc.). When we sort by certain column and we have equal values, we use the column "Id" as second sort criteria. We should be able to sort in ascending and descending order.
+Input
+The input will be read from an HTTP GET request holding parameters named students, column and order, holding the students to sort, the sorting column and the sorting order. Students stay each at a separate line in comma separated format. The column holds one of the values: "id", "username" or "result". The order holds either "ascending" or "descending". The input will be correct. See the example below.
+Output
+The output is an HTML table holding the input students, sorted by the given criteria. Follow the examples below. Encode in the output table cells all HTML special characters like &, <, > and " (use htmlspecialchars() function).
+Constraints
+•	The students is a text area holding the input students, each at a separate line. Each student line holds 4 comma separated values: username, email, type and result.
+o	The username, email and type hold ASCII text (without comma inside).
+o	The result holds an integer number in range [0…1000].
+•	The column holds one of the values: "id", "username" or "result".
+•	The order holds one of the values: "ascending" or "descending". 
+•	Allowed working time: 0.2 seconds. Allowed memory: 16 MB.
+Example
+Input
+students	Pesho, pesho.g@gmail.com, onsite, 400
+Mariika, mariika@gmail.com, online, 350
+Geri, geri@gmail.com, online, 50
+Pesho, peshkata@gmail.com, onsite, 0
+Gosho & Kiro, gosho@gmail.com, onsite, 400
+Mincho, praznikov@vremeto.bg, online, 50	column	result
+		order	descending
+		
+Output	Output (Visualized)
+<table><thead><tr><th>Id</th><th>Username</th><th>Email</th><th>Type</th><th>Result</th></tr></thead><tr><td>5</td><td>Gosho &amp; Kiro</td><td>gosho@gmail.com</td><td>onsite</td><td>400</td></tr><tr><td>1</td><td>Pesho</td><td>pesho.g@gmail.com</td><td>onsite</td><td>400</td></tr><tr><td>2</td><td>Mariika</td><td>mariika@gmail.com</td><td>online</td><td>350</td></tr><tr><td>6</td><td>Mincho</td><td>praznikov@vremeto.bg</td><td>online</td><td>50</td></tr><tr><td>3</td><td>Geri</td><td>geri@gmail.com</td><td>online</td><td>50</td></tr><tr><td>4</td><td>Pesho</td><td>peshkata@gmail.com</td><td>onsite</td><td>0</td></tr></table>	 
+
