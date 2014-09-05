@@ -1,0 +1,18 @@
+<?php
+ 
+echo "<ul>";
+foreach(explode("\n", $_GET['list']) as $line) {
+    $line = trim($line); //remove trailing tabs and spaces
+    if (strlen($line) > 0) { // remove empty lines
+        if (strlen($line) > $_GET['maxSize']) {
+            echo "<li>".htmlspecialchars(substr($line,0,$_GET['maxSize']))."...</li>";
+        }
+        else {
+            echo "<li>".htmlspecialchars($line)."</li>";
+ 
+        }
+//        var_dump($line);
+    }
+ 
+}
+echo "</ul>";
