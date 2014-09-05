@@ -1,0 +1,14 @@
+php.ini 
+display_errors=On
+[XDebug] -  uncomment
+xdebug.remote_enable = 1
+
+
+<?= "output".$var ?>   <=>  <?php echo ""output".$var ?> 
+=& - pointer
+
+global $var - use $var, which is out of this function;
+
+*****
+echo 'var_dump($out)'."\n";
+PREG_SPLIT_NO_EMPTY
