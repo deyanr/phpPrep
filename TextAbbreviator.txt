@@ -1,0 +1,55 @@
+Problem 2 – Semantic HTML
+You are given an HTML code, written in the old non-semantic style using tags like <div id="header">, <div class="section">, etc. Your task is to write a PHP script that converts this HTML to semantic HTML by changing tags like <div id="header"> to their semantic equivalent like <header>.
+The non-semantic tags that should be converted are always <div>s and have either id or class with one of the following values: "main", "header", "nav", "article", "section", "aside" or "footer". Their corresponding closing tags are always followed by comment like <!-- header -->, <!-- nav -->, etc. staying at the same line, after the tag.
+Input
+The input will be read from an HTTP GET request holding a parameter named html. See the examples below.
+Output
+The output is the semantic-version of the input HTML. In all converted tags should make multiple spaces (like <header      style="color:red">) single and remove excessive spaces at the end (like <footer      >). See the examples.
+Constraints
+•	Each line from the input holds either HTML opening tag or HTML closing tag or HTML text content.
+•	There will be no tags that span several lines and no lines that hold multiple tags.
+•	Attributes values will always be enclosed in double quotes ".
+•	Tags will never have id and class at the same time.
+•	The HTML will be valid. Opening and closing tags will match correctly.
+•	Whitespace may occur between attribute names, values and around comments (see the examples).
+•	Allowed working time: 0.2 seconds. Allowed memory: 16 MB.
+Examples
+Input	Output
+<div id="header">
+</div> <!-- header -->	<header>
+</header>
+<div style="color:red" id="header">
+</div> <!-- header -->	<header style="color:red">
+</header>
+<div class="header" style="color:blue">
+</div> <!-- header -->	<header style="color:blue">
+</header>
+<div align="left" id="nav" style="color:blue">
+  <ul class="header">
+    <li id="main">
+      Hi, I have id="main".
+    </li>
+  </ul>
+</div> <!-- nav -->	<nav align="left" style="color:blue">
+  <ul class="header">
+    <li id="main">
+      Hi, I have id="main".
+    </li>
+  </ul>
+</nav>
+  <p class = "section" >
+    <div style = "border: 1px" id = "header" >
+        Header
+        <div id = "nav" >
+            Nav
+        </div>   <!--   nav   -->
+    </div>  <!--header-->
+  </p> <!-- end paragraph section -->	  <p class = "section" >
+    <header style = "border: 1px">
+        Header
+        <nav>
+            Nav
+        </nav>
+    </header>
+  </p> <!-- end paragraph section -->
+
